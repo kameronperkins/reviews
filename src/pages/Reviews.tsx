@@ -30,7 +30,7 @@ const Reviews: React.FC<ReviewsProps> = () => {
       {
         reviewData && reviewData.sort().map(review => {
           return (
-            <PlaywrightReview review={review} />
+            <PlaywrightReview key={review.id} review={review} />
           )
         })
       }
