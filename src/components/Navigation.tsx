@@ -12,6 +12,7 @@ export interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = () => {
   const history = useHistory();
   const navColor = useColorModeValue('rgba(0, 0, 0, 1)', 'rgba(255,255,255,1)');
+  const navBackground = useColorModeValue('rgba(255,255,255,1)', '#1A202C');
   const Nav = styled.div`
     display: flex;
     flex-direction: row;
@@ -20,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = () => {
     border-bottom: 1px solid ${navColor};    
     position: sticky;
     top: 0px;
-    background-color: inherit;
+    background-color: ${navBackground};
   `;
 
   const Links = styled.div`
