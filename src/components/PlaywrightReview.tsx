@@ -12,7 +12,7 @@ const PlaywrightReview: React.FC<PlaywrightReviewProps> = ({ review }) => {
     padding: 1rem;
     border: 1px solid lightgray;
     border-radius: 4px;
-    margin-bottom: 2rem;
+    margin: 1.5rem;
     width: 30rem;
   `;
 
@@ -59,7 +59,7 @@ const PlaywrightReview: React.FC<PlaywrightReviewProps> = ({ review }) => {
         {review.body}
       </ReviewBody>
       <ReviewRating>
-        {review.rating}
+        {review.rating}/5.0
       </ReviewRating>
     </PlaywrightReview>
   );
