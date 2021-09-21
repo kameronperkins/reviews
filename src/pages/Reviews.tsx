@@ -17,6 +17,14 @@ const Reviews: React.FC<ReviewsProps> = () => {
     justify-content: center;
   `;
 
+  if (!reviewData || (reviewData && reviewData.length === 0)) {
+    return (
+      <Reviews>
+        Loading...
+      </Reviews>
+    )
+  }
+
   return (
     <Reviews>
       {
