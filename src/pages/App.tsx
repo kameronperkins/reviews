@@ -4,7 +4,7 @@ import {
   theme,
 } from "@chakra-ui/react"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Reviews from "../components/Reviews"
+import Reviews from "./Reviews"
 import { QueryClient, QueryClientProvider } from "react-query"
 import Navigation from "../components/Navigation"
 import Home from "./Home"

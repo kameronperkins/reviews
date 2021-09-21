@@ -40,6 +40,13 @@ const PlaywrightReview: React.FC<PlaywrightReviewProps> = ({ review }) => {
     color: ${bodyColor};
   `;
 
+  // const ReviewTitle = styled.div`
+  //   text-align: left;    
+  //   font-size: 1rem;
+  //   font-weight: 600;
+  //   color: ${bodyColor};
+  // `;
+
   const ratingColor = useColorModeValue('#ECC94B', '#FAF089');
   const ReviewRating = styled.div`
     font-size: 1rem;
@@ -55,6 +62,9 @@ const PlaywrightReview: React.FC<PlaywrightReviewProps> = ({ review }) => {
       <ReviewDate>
         {new Date(review.publishDate).toLocaleString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
       </ReviewDate>
+      {/* <ReviewTitle>
+        {review.title}
+      </ReviewTitle> */}
       <ReviewBody>
         {review.body}
       </ReviewBody>

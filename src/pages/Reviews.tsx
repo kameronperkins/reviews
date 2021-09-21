@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { useReviews } from '../utils/queries/reviews';
-import PlaywrightReview from './PlaywrightReview';
+import PlaywrightReview from '../components/PlaywrightReview';
 
 export interface ReviewsProps {
 
@@ -14,8 +14,9 @@ const Reviews: React.FC<ReviewsProps> = () => {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center
+    justify-content: center;
   `;
+
   return (
     <Reviews>
       {
