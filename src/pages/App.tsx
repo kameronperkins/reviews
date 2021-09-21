@@ -2,24 +2,27 @@ import * as React from "react"
 import {
   ChakraProvider,
   theme,
-  Box,
-  Grid,
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "../components/ColorModeSwitcher"
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Reviews from "../components/Reviews"
 import { QueryClient, QueryClientProvider } from "react-query"
+import Navigation from "../components/Navigation"
+import Home from "./Home"
+import Plays from "./Plays"
 
 const queryClient = new QueryClient()
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <QueryClientProvider client={queryClient}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <Reviews />
-        </Grid>
-      </Box>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path='/home' component={Home} />
+          <Route path='/plays' component={Plays} />
+          <Route path='/reviews' component={Reviews} />
+        </Switch>
+      </Router>
     </QueryClientProvider>
   </ChakraProvider>
 )

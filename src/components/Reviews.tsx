@@ -12,13 +12,14 @@ const Reviews: React.FC<ReviewsProps> = () => {
 
   const Reviews = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center
   `;
   return (
     <Reviews>
       {
-        reviewData && reviewData.map(review => {
+        reviewData && reviewData.sort().map(review => {
           return (
             <PlaywrightReview review={review} />
           )
