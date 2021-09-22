@@ -1,3 +1,4 @@
+import { StarIcon } from '@chakra-ui/icons';
 import { useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import React from 'react';
@@ -49,28 +50,43 @@ const PlaywrightReview: React.FC<PlaywrightReviewProps> = ({ review }) => {
 
   const ratingColor = useColorModeValue('#ECC94B', '#FAF089');
   const ReviewRating = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     font-size: 1rem;
     text-align: right;
     color: ${ratingColor};
   `;
 
+  const ReviewColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  `;
+
   return (
     <PlaywrightReview>
-      <ReviewAuthor>
-        {review.author}
-      </ReviewAuthor>
-      <ReviewDate>
-        {new Date(review.publishDate).toLocaleString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
-      </ReviewDate>
-      {/* <ReviewTitle>
-        {review.title}
-      </ReviewTitle> */}
-      <ReviewBody>
-        {review.body}
-      </ReviewBody>
-      <ReviewRating>
-        {review.rating}/5.0
-      </ReviewRating>
+      <ReviewColumn>
+        <div>
+          <ReviewAuthor>
+            {review.author}
+          </ReviewAuthor>
+          <ReviewDate>
+            {new Date(review.publishDate).toLocaleString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
+          </ReviewDate>
+          {/* <ReviewTitle>
+            {review.title}
+          </ReviewTitle> */}
+          <ReviewBody>
+            {review.body}
+          </ReviewBody>
+        </div>
+        <ReviewRating>
+          <StarIcon /> &nbsp; {review.rating} / 5
+        </ReviewRating>
+      </ReviewColumn>
     </PlaywrightReview>
   );
 }
