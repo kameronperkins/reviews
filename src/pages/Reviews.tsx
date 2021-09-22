@@ -4,6 +4,7 @@ import { useReviews } from '../utils/queries/reviews';
 import PlaywrightReview from '../components/PlaywrightReview';
 import AddReview from '../components/AddReview';
 import { useDisclosure } from '@chakra-ui/react';
+import ReviewSkeleton from '../components/ReviewSkeleton';
 
 export interface ReviewsProps {
 
@@ -22,9 +23,7 @@ const Reviews: React.FC<ReviewsProps> = () => {
 
   if (!reviewData || (reviewData && reviewData.length === 0)) {
     return (
-      <Reviews>
-        Loading...
-      </Reviews>
+      <ReviewSkeleton />
     )
   }
 
