@@ -62,7 +62,7 @@ const Plays: React.FC<PlaysProps> = () => {
     <PlaysWrapper>
       {
         Object.keys(groupedPlays).map((year, index) => (
-          <>
+          <div key={year}>
             {
               index !== 0 &&
               <LineWrapper>
@@ -77,12 +77,12 @@ const Plays: React.FC<PlaysProps> = () => {
               <TitleRow>
                 {
                   groupedPlays[year].map((play: { title: string, year: number }) => (
-                    <Play>{play.title}</Play>
+                    <Play key={play.title}>{play.title}</Play>
                   ))
                 }
               </TitleRow>
             </TitleGrid>
-          </>
+          </div>
         ))
       }
     </PlaysWrapper>

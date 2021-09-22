@@ -17,7 +17,7 @@ export const useReviews = () => {
   });
 }
 
-const getLocalStorageReviews = () => {
+export const getLocalStorageReviews = () => {
   const reviewsJSON = window.localStorage.getItem(LOCAL_STORAGE_REVIEWS_KEY);
 
   if (!reviewsJSON) return [];
