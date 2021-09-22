@@ -5,7 +5,7 @@ import { Stack, Box } from '@chakra-ui/layout';
 import { Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter } from '@chakra-ui/modal';
 import { Input, InputGroup, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Textarea, useToast } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { addReview } from '../utils/mutations/review';
 import { Review } from '../models/review';
@@ -71,7 +71,7 @@ const AddReview: React.FC<AddReviewProps> = ({ isOpen, onOpen, onClose }) => {
 
   return (
     <div>
-      <AddReviewButton aria-label='Add review' colorScheme='blue' icon={<AddIcon />} onClick={onOpen} />
+      <AddReviewButton aria-label='Add review' colorScheme='yellow' icon={<AddIcon />} onClick={onOpen} />
 
       <Drawer
         isOpen={isOpen}
@@ -141,7 +141,7 @@ const AddReview: React.FC<AddReviewProps> = ({ isOpen, onOpen, onClose }) => {
               <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue" type='submit'>Submit</Button>
+              <Button colorScheme="yellow" type='submit'>Submit</Button>
             </DrawerFooter>
           </form>
         </DrawerContent>
