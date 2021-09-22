@@ -1,66 +1,43 @@
 export const getPlays = () => {
   const plays = [
-    "All's Well That Ends Well (1602)",
-    "Antony and Cleopatra (1606)",
-    "As You Like It (1599)",
-    "Comedy of Errors (1589)",
-    "Coriolanus (1607)",
-    "Cymbeline (1609)",
-    "Hamlet (1600)",
-    "Henry IV, Part I (1597)",
-    "Henry IV, Part II (1597)",
-    "Henry V (1598)",
-    "Henry VI, Part I (1591)",
-    "Henry VI, Part II (1590)",
-    "Henry VI, Part III (1590)",
-    "Henry VIII (1612)",
-    "Julius Caesar (1599)",
-    "King John (1596)",
-    "King Lear (1605)",
-    "Love's Labour's Lost (1594)",
-    "Macbeth (1605)",
-    "Measure for Measure (1604)",
-    "Merchant of Venice (1596)",
-    "Merry Wives of Windsor (1600)",
-    "Midsummer Night's Dream (1595)",
-    "Much Ado about Nothing (1598)",
-    "Othello (1604)",
-    "Pericles (1608)",
-    "Richard II (1595)",
-    "Richard III (1592)",
-    "Romeo and Juliet (1594)",
-    "Taming of the Shrew (1593)",
-    "Tempest (1611)",
-    "Timon of Athens (1607)",
-    "Titus Andronicus (1593)",
-    "Troilus and Cressida (1601)",
-    "Twelfth Night (1599)",
-    "Two Gentlemen of Verona (1594)",
-    "Winter's Tale (1610)",
+    { title: "All's Well That Ends Well", year: 1602 },
+    { title: "Antony and Cleopatra", year: 1606 },
+    { title: "As You Like It", year: 1599 },
+    { title: "Comedy of Errors", year: 1589 },
+    { title: "Coriolanus", year: 1607 },
+    { title: "Cymbeline", year: 1609 },
+    { title: "Hamlet", year: 1600 },
+    { title: "Henry IV, Part I", year: 1597 },
+    { title: "Henry V ", year: 1598 },
+    { title: "Henry IV, Part II ", year: 1597 },
+    { title: "Henry VI, Part I ", year: 1591 },
+    { title: "Henry VI, Part II ", year: 1590 },
+    { title: "Henry VI, Part III ", year: 1590 },
+    { title: "Henry VIII ", year: 1612 },
+    { title: "Julius Caesar ", year: 1599 },
+    { title: "King John ", year: 1596 },
+    { title: "King Lear ", year: 1605 },
+    { title: "Love's Labour's Lost ", year: 1594 },
+    { title: "Macbeth ", year: 1605 },
+    { title: "Measure for Measure ", year: 1604 },
+    { title: "Merchant of Venice ", year: 1596 },
+    { title: "Merry Wives of Windsor ", year: 1600 },
+    { title: "Midsummer Night's Dream ", year: 1595 },
+    { title: "Much Ado about Nothing ", year: 1598 },
+    { title: "Othello ", year: 1604 },
+    { title: "Pericles ", year: 1608 },
+    { title: "Richard II ", year: 1595 },
+    { title: "Richard III ", year: 1592 },
+    { title: "Romeo and Juliet ", year: 1594 },
+    { title: "Taming of the Shrew ", year: 1593 },
+    { title: "Tempest ", year: 1611 },
+    { title: "Timon of Athens ", year: 1607 },
+    { title: "Titus Andronicus ", year: 1593 },
+    { title: "Troilus and Cressida ", year: 1601 },
+    { title: "Twelfth Night ", year: 1599 },
+    { title: "Two Gentlemen of Verona ", year: 1594 },
+    { title: "Winter's Tale ", year: 1610 },
   ];
 
   return plays;
-};
-
-export const getRandomPlay = () => {
-  const min = 2
-  const max = getPlays().length;
-  const index = Math.floor(Math.random() * (max - min + 1)) + min;
-
-  return getPlays()[index];
-}
-
-let count = 0;
-export const getNextPlay = () => {
-  const plays = getPlays();
-  const play = getPlays()[count];
-
-  if (count <= plays.length) {
-    count += 1;
-  }
-  if (count > plays.length) {
-    count = 0;
-  }
-
-  return play;
 };

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Review } from "../../models/review";
-// import { getNextPlay } from "../plays";
 
 export const getReviews = async () => {
   const { data } = await axios.get(`${process.env.REACT_APP_REVIEWS_HOST}/reviews`, { headers: { 'x-api-key': process.env.REACT_APP_REVIEWS_TOKEN } });
@@ -12,7 +11,6 @@ export const getReviews = async () => {
       body: review.body,
       publishDate: review.publish_date,
       rating: review.rating,
-      // title: getNextPlay(),
     } as Review;
   });
 
