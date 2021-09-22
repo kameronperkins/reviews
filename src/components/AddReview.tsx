@@ -25,10 +25,16 @@ interface ReviewFormInputs {
 }
 
 const AddReview: React.FC<AddReviewProps> = ({ isOpen, onOpen, onClose }) => {
-  const AddReviewButton = styled(IconButton)`
+  const AddReviewWrapper = styled.div`
     position: fixed;
-    top: 38rem;
-    left: 85rem;
+    bottom: 3rem;
+    right: 3rem;
+  `;
+
+  const AddReviewContainer = styled.div`
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;      
   `;
 
   const queryClient = useQueryClient();
@@ -71,7 +77,11 @@ const AddReview: React.FC<AddReviewProps> = ({ isOpen, onOpen, onClose }) => {
 
   return (
     <div>
-      <AddReviewButton aria-label='Add review' colorScheme='yellow' icon={<AddIcon />} onClick={onOpen} />
+      <AddReviewWrapper>
+        <AddReviewContainer>
+          <IconButton aria-label='Add review' colorScheme='yellow' icon={<AddIcon />} onClick={onOpen} />
+        </AddReviewContainer>
+      </AddReviewWrapper>
 
       <Drawer
         isOpen={isOpen}
