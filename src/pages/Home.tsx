@@ -15,18 +15,25 @@ const Home: React.FC<HomeProps> = () => {
   const Home = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-wrap: wrap;   
+    height: 90vh; 
     padding: 2rem 15rem;
     @media (max-width: 420px) {
       padding: 2rem;
     }
   `;
 
-  const HomeLeft = styled.div`
+  const HomeLeftColumn = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+  `;
+
+  const HomeLeftRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   `;
 
   const Introduction = styled.div`
@@ -61,26 +68,37 @@ const Home: React.FC<HomeProps> = () => {
       padding-top: 2rem;
     }
   `;
+
+  const ImageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  `;
+
   return (
     <Home>
-      <HomeLeft>
-        <Introduction>
-          Hello, I'm
-        </Introduction>
-        <IntroductionBold>
-          William Shakespeare
-        </IntroductionBold>
-        <IntroductionByLine>
-          Playwright
-        </IntroductionByLine>
-        <ButtonWrapper>
-          <MyWork onClick={() => history.push('/plays')}>My work</MyWork>
-          &nbsp;
-          &nbsp;
-          <Button onClick={() => history.push('/reviews')}>Leave review</Button>
-        </ButtonWrapper>
-      </HomeLeft>
-      <Will src={William} alt='Bust of William Shakespeare' filter='invert' />
+      <HomeLeftRow>
+        <HomeLeftColumn>
+          <Introduction>
+            Hello, I'm
+          </Introduction>
+          <IntroductionBold>
+            William Shakespeare
+          </IntroductionBold>
+          <IntroductionByLine>
+            Playwright
+          </IntroductionByLine>
+          <ButtonWrapper>
+            <MyWork onClick={() => history.push('/plays')}>My work</MyWork>
+            &nbsp;
+            &nbsp;
+            <Button onClick={() => history.push('/reviews')}>Leave review</Button>
+          </ButtonWrapper>
+        </HomeLeftColumn>
+      </HomeLeftRow>
+      <ImageWrapper>
+        <Will src={William} alt='Bust of William Shakespeare' filter='invert' />
+      </ImageWrapper>
     </Home>
   );
 }
