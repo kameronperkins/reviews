@@ -25,7 +25,7 @@ const Navigation: React.FC<NavigationProps> = () => {
   `;
 
   const Links = styled.div`
-    width: 33%;
+    width: 45%;
     display: flex;
     justify-content: space-between;
   `;
