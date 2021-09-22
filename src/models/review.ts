@@ -4,5 +4,5 @@ export interface Review {
   body: string;
   rating: number;
   publishDate: string;
-  title: string;
+  title?: string;
 }

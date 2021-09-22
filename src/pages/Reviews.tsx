@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { useReviews } from '../utils/queries/reviews';
 import PlaywrightReview from '../components/PlaywrightReview';
+import AddReview from '../components/AddReview';
+import { useDisclosure } from '@chakra-ui/react';
 
 export interface ReviewsProps {
 
@@ -9,6 +11,7 @@ export interface ReviewsProps {
 
 const Reviews: React.FC<ReviewsProps> = () => {
   const { data: reviewData } = useReviews();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const Reviews = styled.div`
     display: flex;
@@ -26,15 +29,18 @@ const Reviews: React.FC<ReviewsProps> = () => {
   }
 
   return (
-    <Reviews>
-      {
-        reviewData && reviewData.sort().map(review => {
-          return (
-            <PlaywrightReview key={review.id} review={review} />
-          )
-        })
-      }
-    </Reviews>
+    <>
+      <AddReview isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      <Reviews>
+        {
+          reviewData && reviewData.sort().map(review => {
+            return (
+              <PlaywrightReview key={review.id} review={review} />
+            )
+          })
+        }
+      </Reviews>
+    </>
   );
 }
 
