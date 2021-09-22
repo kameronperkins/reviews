@@ -1,6 +1,9 @@
 ### `yarn`
 
 This will install all of the app's dependencies
+### `.env`
+
+Use .env-example as a template. Copy and rename to `.env` and replace with actual values
 ### `yarn start`
 
 Runs the app in the development mode.<br /> Open
@@ -17,3 +20,6 @@ React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br /> Your app is
 ready to be deployed!
+### `Comments`
+
+This app was built to showcase react, typescript, and other notable node packages. I do not claim ownership of any digital assets included within. 
